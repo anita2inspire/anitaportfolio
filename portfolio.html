@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anita Nambuuza | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --white: #ffffff;
+            --sky-blue: #B3E5FC;
+            --pastel-blue: #D7EEFF;
+            --slate-gray: #5A646E;
+            --light-gray: #f8f9fa;
+            --transition: all 0.3s ease;
+            --border-radius: 16px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --box-shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--white);
+            color: var(--slate-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4 { font-weight: 600; margin-bottom: 1rem; }
+        h1 { font-size: 3.3rem; }
+        h2 { font-size: 2.4rem; }
+        p { margin-bottom: 1rem; font-size: 1.05rem; }
+        h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        section { padding: 6rem 0; }
+
+        /* NAVIGATION */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 999;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--slate-gray);
+            text-decoration: none;
+        }
+
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--slate-gray);
+            font-weight: 500;
+            position: relative;
+        }
+        .nav-links a:hover { color: var(--sky-blue); }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--pastel-blue), var(--white));
+        }
+
+        .hero-text-box { max-width: 650px; }
+        .hero-tagline {
+            font-size: 1.9rem;
+            margin-bottom: 1.7rem;
+            color: var(--slate-gray);
+            line-height: 1.3;
+        }
+
+        .hero-image-placeholder {
+            width: 420px;
+            height: 420px;
+            background: linear-gradient(135deg, var(--sky-blue), var(--pastel-blue));
+            border-radius: 20px;
+            display: flex; justify-content: center; align-items: center;
+            font-weight: 500;
+            color: var(--slate-gray);
+        }
+
+        .cta-buttons { margin-top: 2rem; display: flex; gap: 1rem; }
+        .btn {
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-primary {
+            background: var(--sky-blue);
+            color: white;
+            box-shadow: 0 4px 12px rgba(179,229,252,0.55);
+        }
+        .btn-primary:hover { transform: translateY(-3px); }
+
+        .btn-secondary {
+            border: 2px solid var(--sky-blue);
+            color: var(--slate-gray);
+        }
+        .btn-secondary:hover {
+            background: var(--sky-blue);
+            color: white;
+        }
+
+        /* ABOUT ME */
+        #about p { max-width: 750px; margin: 1rem auto; }
+
+        .callout-grid {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .callout {
+            background: var(--pastel-blue);
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+        }
+        .callout-img {
+            width: 100%; height: 160px;
+            background: var(--sky-blue);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        /* EXPERIENCE TIMELINE */
+        .timeline-wrapper {
+            max-width: 800px;
+            margin: 3rem auto;
+            position: relative;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 25px;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--sky-blue);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-node {
+            width: 45px;
+            height: 45px;
+            background: var(--pastel-blue);
+            border-radius: 50%;
+            border: 3px solid var(--sky-blue);
+            margin-right: 1.6rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a class="logo" href="#hero">Anita Nambuuza</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section id="hero" class="hero">
+    <div class="container" 
+         style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:2.5rem; min-height:100vh;">
+
+        <div class="hero-image-placeholder"></div>
+
+        <div class="hero-text-box">
+            <h1 class="hero-tagline">
+                "Building human-centered digital experiences that empower, educate, and inspire."
+            </h1>
+
+            <p style="max-width:700px; margin:auto;">
+                Hi, I’m Anita, a Computer Science student at UBC with a minor in Communications & Rhetoric.
+                I love working at the intersection of technology, product, communication, and empowerment.
+            </p>
+
+            <div class="cta-buttons" style="justify-content:center;">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="resume.pdf" class="btn btn-secondary">Download Resume</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ABOUT ME -->
+<section id="about">
+    <div class="container">
+        <h2>About Me</h2>
+
+        <p>
+            I’m Anita — a creative technologist, communicator, and youth advocate passionate about designing accessible
+            digital experiences that uplift and empower young people globally.
+        </p>
+
+        <p>
+            I blend technology, communication, and leadership to build platforms, communities, and content that
+            create meaningful impact.
+        </p>
+
+        <h3 style="text-align:center; margin-top:3rem;">What I Work On</h3>
+
+        <div class="callout-grid">
+
+            <div class="callout">
+                <div class="callout-img"></div>
+                <h4>Social Media Design</h4>
+                <p>Branded visuals, digital storytelling, and content crafted for youth engagement.</p>
+            </div>
+
+            <div class="callout">
+                <div class="callout-img"></div>
+                <h4>Advocacy & Community Impact</h4>
+                <p>Worked with EnviroPads to support menstrual health, sustainability, and youth outreach.</p>
+            </div>
+
+            <div class="callout">
+                <div class="callout-img"></div>
+                <h4>Digital Communication</h4>
+                <p>Created youth-centered online content with over 2,500 TikTok followers and high engagement.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE TIMELINE -->
+<section id="experience">
+    <div class="container">
+        <h2>Experience & Leadership</h2>
+
+        <div class="timeline-wrapper">
+            <div class="timeline-line"></div>
+
+            <!-- ITEM 1 -->
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div>
+                    <h3>President — Rotaract Club of UBCO</h3>
+                    <p><strong>2025 – Present</strong></p>
+                    <p><strong>01.</strong> Leading 15 members to build new social impact initiatives.</p>
+                    <p><strong>02.</strong> Established 12-member executive team & club structure.</p>
+                    <p><strong>03.</strong> Managing partnerships, outreach, and operational planning.</p>
+                </div>
+            </div>
+
+            <!-- ITEM 2 -->
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div>
+                    <h3>Speaker Relations Lead — TEDxUBCO</h3>
+                    <p><strong>2024 – Present</strong></p>
+                    <p><strong>01.</strong> Preparing 3 TEDx speakers for talks.</p>
+                    <p><strong>02.</strong> Built onboarding systems and workshop frameworks.</p>
+                    <p><strong>03.</strong> Leading 4-member speaker support team.</p>
+                </div>
+            </div>
+
+            <!-- ITEM 3 -->
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div>
+                    <h3>Student Ambassador — UBC</h3>
+                    <p><strong>2025 – Present</strong></p>
+                    <p><strong>01.</strong> Represent campus at recruitment events (300+ attendees).</p>
+                    <p><strong>02.</strong> Gave guided tours to families & prospective students.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="container">
+        <h2>Projects</h2>
+
+        <p style="text-align:center; max-width:750px; margin:auto;">
+            A mix of product, tech, creative, and community-driven projects that reflect my passion for
+            building meaningful digital experiences.
+        </p>
+
+        <div class="project-grid" style="margin-top:3rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem;">
+
+            <!-- PROJECT 1 -->
+            <div class="project-card">
+                <div class="project-image" style="background:linear-gradient(135deg,var(--sky-blue),var(--pastel-blue)); height:190px; border-radius:16px;"></div>
+                <div class="project-content">
+                    <h3>STEMWave — Youth Empowerment Platform</h3>
+                    <p class="project-role">Product Lead • UX Designer • Founder</p>
+                    <p>A digital ecosystem offering mentorship, opportunities, workshops, and a community
+                    for young people worldwide. Targeting over <strong>1,000+ youth</strong> globally.</p>
+                    <p><strong>Skills:</strong> Product strategy, UX design, content strategy, youth engagement.</p>
+                </div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="project-card">
+                <div class="project-image" style="background:linear-gradient(135deg,var(--pastel-blue),var(--sky-blue)); height:190px; border-radius:16px;"></div>
+                <div class="project-content">
+                    <h3>Technical Coursework Projects</h3>
+                    <p class="project-role">Developer</p>
+                    <p>Java and Python projects built through university coursework — including DS&A,
+                        object-oriented design, debugging, and algorithmic problem-solving.</p>
+                    <p><strong>Skills:</strong> Java, Python, Git, algorithms, problem-solving.</p>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="project-card">
+                <div class="project-image" style="background:linear-gradient(135deg,var(--sky-blue),var(--white)); height:190px; border-radius:16px;"></div>
+                <div class="project-content">
+                    <h3>Creative Tech & UX Design</h3>
+                    <p class="project-role">Designer • Researcher</p>
+                    <p>User-centered design projects, wireframes, content systems, and digital communication
+                        created for youth-focused storytelling and engagement.</p>
+                    <p><strong>Skills:</strong> Figma, UX research, content mapping, creative direction.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+    <div class="container">
+        <h2>Skills</h2>
+
+        <div class="skills-grid">
+
+            <!-- TECHNICAL -->
+            <div class="skill-category">
+                <h3>💻 Technical Skills</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Java,</span>
+                    <span class="skill-item">Python,</span>
+                    <span class="skill-item">HTML/CSS,</span>
+                    <span class="skill-item">Data Structures,</span>
+                    <span class="skill-item">Debugging,</span>
+                    <span class="skill-item">Git/GitHub,</span>
+                    <span class="skill-item">Object-Oriented Design,</span>
+                    <span class="skill-item">Cybersecurity Foundations</span>
+                </div>
+            </div>
+
+            <!-- PRODUCT / UX -->
+            <div class="skill-category">
+                <h3>Product & UX</h3>
+                <div class="skill-list">
+                    <span class="skill-item">User Research,</span>
+                    <span class="skill-item">Wireframing (Figma),</span>
+                    <span class="skill-item">User Journeys,</span>
+                    <span class="skill-item">Roadmapping,</span>
+                    <span class="skill-item">Feature Planning,</span>
+                    <span class="skill-item">Problem Framing,</span>
+                    <span class="skill-item">Content Strategy</span>
+                </div>
+            </div>
+
+            <!-- COMMUNICATION -->
+            <div class="skill-category">
+                <h3>✍🏾 Communication</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Public Speaking</span>
+                    <span class="skill-item">TEDx</span>
+                    <span class="skill-item">Digital Storytelling</span>
+                    <span class="skill-item">Writing</span>
+                    <span class="skill-item">Youth Communication</span>
+                </div>
+            </div>
+
+            <!-- LEADERSHIP -->
+            <div class="skill-category">
+                <h3>🌱 Leadership</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Rotaract President</span>
+                    <span class="skill-item">STEMWave Founder</span>
+                    <span class="skill-item">Student Ambassador</span>
+                    <span class="skill-item">Event Planning</span>
+                    <span class="skill-item">Team Leadership</span>
+                    <span class="skill-item">Community Engagement</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <h2 style="text-align:center;">Contact Me</h2>
+        <p style="text-align:center; max-width:650px; margin:0 auto 3rem;">
+            I’d love to connect about internships, collaborations, youth initiatives,
+            or anything creative and meaningful.
+        </p>
+
+        <div class="contact-container" 
+             style="display:flex; justify-content:center; gap:3rem; flex-wrap:wrap;">
+
+            <!-- LEFT SIDE: CONTACT INFO -->
+            <div class="contact-info" style="display:flex; flex-direction:column; gap:1.5rem; max-width:320px;">
+
+                <div class="contact-method" style="display:flex; align-items:center; gap:1rem;">
+                    <div class="contact-icon"
+                         style="width:55px; height:55px; background:var(--pastel-blue); border-radius:50%;
+                                display:flex; justify-content:center; align-items:center; color:var(--sky-blue); font-size:1.3rem;">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <p style="margin-bottom:0;">anita2inspireug@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-method" style="display:flex; align-items:center; gap:1rem;">
+                    <div class="contact-icon"
+                         style="width:55px; height:55px; background:var(--pastel-blue); border-radius:50%;
+                                display:flex; justify-content:center; align-items:center; color:var(--sky-blue); font-size:1.3rem;">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <a href="#" class="btn btn-secondary">Connect</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE: CONTACT FORM -->
+            <div class="contact-form"
+                 style="background:var(--pastel-blue); padding:2rem; border-radius:20px; width:100%; max-width:400px; box-shadow:var(--box-shadow);">
+
+                <form>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="Your email">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea placeholder="Your message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Send</button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2025 Anita Nambuuza. All rights reserved.</p>
+    </div>
+</footer>
+
+
+<!-- JS -->
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+</script>
+
+</body>
+</html>
